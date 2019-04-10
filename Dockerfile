@@ -1,0 +1,6 @@
+FROM ubuntu
+ENV __OLD_DEBIAN_FRONTEND="$DEBIAN_FRONTEND"
+ENV DEBIAN_FRONTEND="noninteractive"
+RUN apt-get update
+RUN apt-get dist-upgrade -yq
+ENV DEBIAN_FRONTEND="$__OLD_DEBIAN_FRONTEND"
